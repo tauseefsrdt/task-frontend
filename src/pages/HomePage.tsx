@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../component/Header";
 import { FiPlus } from "react-icons/fi";
 import Modal from "../component/Modal";
-import { RootState, useAppDispatch, useAppSelector } from "../app/store";
+import { useAppDispatch} from "../app/store";
 import { onChangheTaskFormModal } from "../features/ui/uiSlice";
 import TaskList from "../component/TaskList";
 const HomePage: React.FC = () => {

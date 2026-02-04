@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000", // backend API
+  baseURL: "https://task-backend-d0a8.onrender.com", // backend API
 });
 
 // Add token to headers
@@ -14,7 +14,7 @@ API.interceptors.request.use((config) => {
 });
 
 API.interceptors.response.use(
-  (response) => response,   
+  (response) => response,
   (error) => {
     if (error.response?.status === 401) {
       // 🔑 Token expired or invalid
@@ -22,7 +22,7 @@ API.interceptors.response.use(
       window.location.href = "/login"; // redirect to login page
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default API;
